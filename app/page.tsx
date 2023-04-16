@@ -1,4 +1,5 @@
 import { getProjects } from '@/sanity/sanity.utils';
+import Image from 'next/image';
 
 export default async function Home() {
   const projects = await getProjects();
@@ -6,8 +7,16 @@ export default async function Home() {
   return (
     <main className=''>
       <p>my projects go here</p>
-      {projects?.map(({ _id, name }: any) => (
-        <div key={_id}>{name}</div>
+      {projects?.map((project) => (
+        <div key={project?._id}>
+          {project?.name}
+          <Image
+            src={project?.image}
+            alt={project?.name}
+            width={142}
+            height={142}
+          />
+        </div>
       ))}
     </main>
   );
