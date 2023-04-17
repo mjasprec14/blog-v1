@@ -29,3 +29,10 @@ export interface Project extends SanityBody {
   slug: Slug;
   content: PortableTextBlock[];
 }
+
+export interface Page extends SanityBody {
+  _type: 'page';
+  title: string;
+  slug: Slug;
+  content: PortableTextBlock[];
+}
