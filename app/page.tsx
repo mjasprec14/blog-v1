@@ -6,7 +6,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <main className='max-w-5xl mx-auto py-20'>
+    <main>
       <h1
         className='text-7xl font-extrabold 
       hover:from-purple-600 hover:to-orange-400 '
